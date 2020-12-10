@@ -1,0 +1,23 @@
+{
+  "name": "PinBot",
+  "version": "1.0.0",
+  "description": "A random dumb bot that you DM it, and it adds your message to the pins of a channel",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechGeekGamer/PinBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechGeekGamer/PinBot/issues"
+  },
+  "homepage": "https://github.com/TechGeekGamer/PinBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
