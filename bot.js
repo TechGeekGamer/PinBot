@@ -10,7 +10,7 @@ if(!fs.existsSync("./channels.json"))
 client.on("ready", () => console.log("Ready"))
 client.on("message", (message) => {
     if(message.channel.type == "dm" && message.author.bot == false){
-        if(!channel[message.author.id]){
+        if(!channels[message.author.id]){
             message.client.guilds.cache.get("786354821207949352").channels.create(message.author.id, {
                 topic:`This is ${message.author.tag}'s (${message.author.id}) channel.`,
                 type:"text",
@@ -24,7 +24,7 @@ client.on("message", (message) => {
                 })
             })
         }else{
-            let channel = client.channels.cache.get(channel[message.author.id])
+            let channel = client.channels.cache.get(channels[message.author.id])
             channel.send(`\`\`\`\n${message.content}\n\`\`\`\nMessage by <@${message.author.id}>`)
             .then(msg => {
                 message.channel.send(`📤 Sent your message in <#${msg.channel.id}> (${msg.channel.id}). `)  
