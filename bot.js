@@ -18,6 +18,6 @@ client.on("message", (message) => {
     }
 })
 
-client.on("message", msg => console.log(msg.content + "   " + msg.author.tag))
+client.on("message", msg => console.log)
 
 client.login(config.BOT_TOKEN)
