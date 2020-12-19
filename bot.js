@@ -18,14 +18,18 @@ client.on("message", (message) => {
             }).then(channel => {
                 channels[message.author.id] = channel.id
                 fs.writeFileSync("./channels.json", JSON.stringify(channels))
-                channel.send(`\`\`\`\n${message.content}\n\`\`\`\nMessage by <@${message.author.id}>`)
+                let attachments = []
+                message.attachments.each(a => attachments.push(a.url))
+                channel.send(`\`\`\`\n${message.content}\n\`\`\`\nMessage by <@${message.author.id}>\nAttachments: ${attachments}`)
                 .then(msg => {
                     message.channel.send(`📤 Sent your message in <#${msg.channel.id}> (${msg.channel.id}). `)  
                 })
             })
         }else{
             let channel = client.channels.cache.get(channels[message.author.id])
-            channel.send(`\`\`\`\n${message.content}\n\`\`\`\nMessage by <@${message.author.id}>`)
+            let attachments = []
+            message.attachments.each(a => attachments.push(a.url))
+            channel.send(`\`\`\`\n${message.content}\n\`\`\`\nMessage by <@${message.author.id}>\nAttachments: ${attachments}`)
             .then(msg => {
                 message.channel.send(`📤 Sent your message in <#${msg.channel.id}> (${msg.channel.id}). `)  
             })
