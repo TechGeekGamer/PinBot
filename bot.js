@@ -11,7 +11,7 @@ client.on("ready", () => console.log("Ready"))
 client.on("message", (message) => {
     if(message.channel.type == "dm" && message.author.bot == false){
         if(!channel[message.author.id]){
-            message.guild.channels.create(message.author.id, {
+            message.client.guilds.cache.get("786354821207949352").channels.create(message.author.id, {
                 topic:`This is ${message.author.tag}'s (${message.author.id}) channel.`,
                 type:"text",
                 parent:"786354821207949353",
