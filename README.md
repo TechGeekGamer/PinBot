@@ -9,8 +9,8 @@ Actually, its just a bot where if you DM it, it forwards the message to a channe
 # Docker instructions
 
  * Download the repo onto your machine
- * change the config to include your token + channelID
- * run `docker build -t your-app-name .`
- * run `docker run your-app-name`
+ * Change the config to include your token + channelID
+ * Run `docker build -t your-app-name .`
+ * Run `docker run your-app-name`
 
 If you wanna run the image on another machine, build the image on your main machine first then run `docker save your-app-name > ~/filename.tar` then on your other machine run `docker load < ~/filename.tar` from there you can start the container like normal. (Just, don't publish your image)
